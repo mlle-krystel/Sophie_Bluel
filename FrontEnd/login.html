@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page de connexion</title>
+  <link rel="stylesheet" href="./assets/style.css">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
+	<meta name="description" content="">
+</head>
+<body>
+  <header>
+    <h1>Sophie Bluel<span>Architecte d'intérieur</span></h1>
+    <nav>
+      <ul>
+        <li>projets</li>
+        <li>contact</li>
+        <li><a id="bold" href="editor.html">login</a></li> 
+        <li><img src="./assets/icons/instagram.png" alt="Lien vers Instagram"></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="login">
+    <h2>Log In</h2>
+    <form id="loginForm">
+      <label for="email">E-mail</label>
+
+      <!-- l'attribut required le navigateur affiche un message si ce n'est pas rempli -->
+      <input type="email" id="email" name="email" required>
+
+      <label for="password">Mot de passe</label>
+      <input type="password" id="password" name="password" required>
+
+      <input type="submit" value="Se connecter">
+    </form>
+    <p class="forgot">Mot de passe oublié</p>
+  </section>
+
+  <footer>
+    <nav>
+      <ul>
+        <li>Mentions Légales</li>
+      </ul>
+    </nav>
+  </footer>
+
+  <script type="module" src="./works/login.js"></script>
+</body>
+</html>
