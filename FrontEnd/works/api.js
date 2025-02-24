@@ -134,6 +134,7 @@ export async function ajoutPhotoApi(formData) {
     // Vérifie si la requête a bien été acceptée par l'API
     if (response.ok) {
       console.log("Photo ajoutée avec succès !");
+      afficherMessage("Projet ajouté avec succès !", "success");
       return await response.json(); // Retourne la photo ajoutée sous forme d'objet JSON
     } else {
       afficherMessage("Erreur lors de l'ajout de la photo !");

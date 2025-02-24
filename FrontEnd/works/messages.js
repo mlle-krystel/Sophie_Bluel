@@ -5,10 +5,10 @@ export const afficherMessage = (message, type) => {
     // Vérifie sur quelle page on est et sélectionne le bon msg-box
     if (document.getElementById("loginForm")) {
         messageBox = document.getElementById("msgLogin"); // Message pour la page de login
-    } 
+    }
     else if (document.getElementById("section-ajout-photo")?.style.display === "block") {
         messageBox = document.getElementById("msgAjout"); // Message pour l'ajout de photo
-    } 
+    }
     else {
         messageBox = document.getElementById("msgBox"); // Message pour la galerie principale
     }
@@ -27,10 +27,10 @@ export const afficherMessage = (message, type) => {
     // Ajoute la bonne classe selon le type de message
     if (type === "error") {
         messageBox.classList.add("error");
-       
+
     } else {
         messageBox.classList.add("success");
-        
+
     }
 
     // Affiche le message
@@ -40,5 +40,5 @@ export const afficherMessage = (message, type) => {
     setTimeout(() => {
         messageBox.classList.add("hidden");
         messageBox.style.display = "none"; // Assure que le message est bien caché
-    }, 10000);
+    }, 5000);
 };

@@ -175,7 +175,7 @@ h1 {
   color: #b1663c;
 }
 
-h1 > span {
+h1>span {
   font-family: "Work Sans";
   font-size: 10px;
   letter-spacing: 0.1em;
@@ -306,7 +306,7 @@ li:hover {
 }
 
 #contact,
-#login > * {
+#login>* {
   text-align: center;
 }
 
@@ -404,6 +404,7 @@ footer nav ul {
 #section-gallery {
   padding: 30px 10px;
 }
+
 #modalTittle {
   display: flex;
   justify-content: center;
@@ -611,22 +612,43 @@ select option {
   font-size: 14px;
 }
 
-#msgBox, #msgAjout, #msgLogin {
+#msgBox {
   display: none;
   font-size: 18px;
   text-align: center;
   width: 50%;
   margin: auto;
+  position: relative;
+  top: 10px;
 }
+
+#msgAjout {
+  position: relative;
+  display: none;
+  font-size: 18px;
+  text-align: center;
+  width: 50%;
+  margin: auto;
+  top: 40px;
+}
+
+
+#msgLogin {
+  display: none;
+  font-size: 18px;
+  text-align: center;
+  width: 100%;
+  position: relative;
+  top: 20px;
+}
+
+
 
 .error {
   color: red;
- position: relative;
- top: 10px;
+
 }
 
 .success {
   color: green;
-  position: relative;
-  top: 10px;
 }

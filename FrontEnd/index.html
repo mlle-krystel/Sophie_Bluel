@@ -105,8 +105,6 @@
 
   <!-- Fenêtre modale comportant les 2 vues -->
 
-  
-
   <div id="modal" class="modal hidden" aria-hidden="true" role="dialog" aria-label="modalTitle">
     <!-- modale principale -->
     <div id="section-gallery" class="section-gallery">
@@ -123,13 +121,13 @@
       <!-- Conteneur de la galerie dans la modale -->
       <div id="modalGallery" class="modalGallery"></div>
 
-   
-
       <div class="firstModalSeparation"></div>
 
       <!-- BOUTON pour ajouter une nouvelle photo -->
       <button id="submitAjoutBtn">Ajouter une photo</button>
     </div>
+
+
 
     <!-- modale pour ajouter projet -->
     <div id="section-ajout-photo" class="section-ajout-photo hidden">
@@ -143,30 +141,26 @@
         ✕
       </button>
 
-         <!-- Message de succès ou d'erreur -->
-         <div id="msgAjout" class="hidden"></div>
+      <!-- Message de succès ou d'erreur -->
+      <div id="msgAjout" class="hidden"></div>
 
       <h2 id="modalTittleAjout">Ajout photo</h2>
 
       <div id="uploadContainer">
         <i id="pictureIcon" class="fa-regular fa-image"></i>
 
-          
-         
 
         <!-- Formulaire pour ajouter une photo -->
         <form id="addImage">
           <!-- Conteneur de l'upload d'image -->
           <label for="fileUpload" class="custom-file-upload">+ Ajouter photo</label>
           <input type="file" id="fileUpload" class="hidden-input" accept="image" />
-          <img id="preview" style="display: none; max-width: 420px; max-height: 169px; object-fit: cover;">
+          <img id="preview" style="display: none; max-width: 420px; max-height: 169px; object-fit: contain;">
           <p class="helptext">jpg, png : 4mo max</p>
         </form>
       </div>
 
       <div id="blockIdPicture">
-
-
         <!-- Champ titre -->
         <label for="photoTitle">Titre</label>
         <input type="text" id="photoTitle" required />
@@ -182,6 +176,7 @@
       <input type="submit" id="submitValidBtn" value="Valider">
     </div>
   </div>
+
 
   <!-- fichier principal qui importe les autres fichier js -->
   <script type="module" src="./works/script.js"></script>

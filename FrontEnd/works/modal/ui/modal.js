@@ -136,7 +136,7 @@ export const initModal = async (listeProjets) => {
   await displayCategories();
   console.log("initialisation de la modal");
 
-  
+
   // Ouvrir la modale principale
   if (openModalBtn) {
     openModalBtn.addEventListener("click", () => {
@@ -229,7 +229,7 @@ export const initModal = async (listeProjets) => {
     fileUpload.style.display = "none";
     helpText.style.display = "block";
     document.querySelector(".custom-file-upload").style.display = "flex";
-    
+
 
     // Met à jour le bouton si on supprime la photo
     updateValidBtn();
@@ -314,3 +314,6 @@ export const ajoutPhotoGallery = (newPhoto) => {
 
   console.log("Nouvelle photo ajoutée à la galerie !");
 };
+
+// Ajoute l'export pour permettre l'importation dans add-work.js
+export { displayCategories };

@@ -1,5 +1,5 @@
 // fichier dédié à la gestion des interactions liées au formulaire de connexion
-import { loginUser } from "./api.js"; 
+import { loginUser } from "./api.js";
 import { afficherMessage } from "./messages.js";
 
 // je teste si le script est bien chargé
@@ -41,6 +41,6 @@ document.addEventListener("DOMContentLoaded", () => {
     } catch (error) {
       afficherMessage("Une erreur est survenue lors de la connexion. Veuillez réessayer.", "error");
     }
-    
+
   });
 });
