@@ -61,13 +61,13 @@ export const addWork = async ({ title, category, image }) => {
 
       }
 
-      console.log("Fermeture de la modale...");
-      if (modal && overlay) {
-        modal.style.display = "none";
-        overlay.style.display = "none";
-      } else {
-        console.error("La modale ou l'overlay est introuvable !");
-      }
+      // console.log("Fermeture de la modale...");
+      // if (modal && overlay) {
+      //   modal.style.display = "none";
+      //   overlay.style.display = "none";
+      // } else {
+      //   console.error("La modale ou l'overlay est introuvable !");
+      // }
     }
   } catch (error) {
   }
