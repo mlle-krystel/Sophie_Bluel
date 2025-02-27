@@ -84,44 +84,42 @@ async function afficherFiltres(categories, listProjets) {
       return;
     }
 
-    // Ajouter un bouton "Tous" pour afficher tous les projets
-    const btnTous = document.createElement("button");
-    btnTous.textContent = "Tous"; // Définit le texte affiché dans le bouton
-    btnTous.classList.add("btnFiltres"); // Ajoute une classe CSS pour le style
-    btnTous.addEventListener("click", () => afficherProjets(listProjets)); // Ajoute un événement clic pour afficher tous les projets
-    filtres.appendChild(btnTous); // Insère le bouton dans l'élément "filters"
+   // Ajouter un bouton "Tous" pour afficher tous les projets
+const btnTous = document.createElement("button");
+btnTous.textContent = "Tous"; 
+btnTous.classList.add("btnFiltres");
+btnTous.classList.add("active"); // Le bouton "Tous" est actif par défaut
+btnTous.addEventListener("click", () => {
+  const btns = document.querySelectorAll(".btnFiltres");
+  btns.forEach((btn) => btn.classList.remove("active")); // Désactive tous les boutons
+  btnTous.classList.add("active"); // Active le bouton "Tous"
+  afficherProjets(listProjets);
+});
+filtres.appendChild(btnTous);
 
-    // Parcourt chaque catégorie pour créer un bouton correspondant
-    categories.forEach((categorie) => {
-      // Crée un bouton HTML pour la catégorie en cours
-      const btnCategories = document.createElement("button");
+// Parcourt chaque catégorie pour créer un bouton correspondant
+categories.forEach((categorie) => {
+  const btnCategories = document.createElement("button");
+  btnCategories.textContent = categorie.name;
+  btnCategories.classList.add("btnFiltres");
 
-      // Définit le texte du bouton avec le nom de la catégorie
-      btnCategories.textContent = categorie.name;
+  btnCategories.addEventListener("click", async () => {
+    const btns = document.querySelectorAll(".btnFiltres");
+    btns.forEach((btn) => btn.classList.remove("active")); // Désactive tous les boutons
 
-      // Ajoute une classe CSS pour appliquer un style spécifique
-      btnCategories.classList.add("btnFiltres");
+    btnCategories.classList.add("active"); // Active le bouton cliqué
 
-      // Ajoute un événement clic au bouton pour afficher les projets de la catégorie correspondante
-      btnCategories.addEventListener("click", async () => {
-        // verifie si la liste des projets est bien récupérée
-        console.log("Tous les projets :", listProjets);
+    console.log("Catégorie sélectionnée :", categorie.id);
+    const galerieFiltree = listProjets.filter(
+      (projet) => projet.categoryId === categorie.id
+    );
 
-        // Vérifie la catégorie selectionnée
-        console.log("Catégorie sélectionnée :", categorie.id);
+    afficherProjets(galerieFiltree);
+  });
 
-        // Filtre les projets pour ne garder que ceux de la catégorie en cours
-        const galerieFiltree = listProjets.filter(
-          (projet) => projet.categoryId === categorie.id
-        );
+  filtres.appendChild(btnCategories);
+});
 
-        // Affiche uniquement les projets filtrés dans la galerie
-        afficherProjets(galerieFiltree);
-      });
-
-      // Ajoute le bouton dans l'élément "filters"
-      filtres.appendChild(btnCategories);
-    });
   } catch (error) {
     // Si une erreur survient (ex. : API inaccessible), affiche un message d'erreur dans la console
     console.error("Impossible d'afficher les filtres", error);

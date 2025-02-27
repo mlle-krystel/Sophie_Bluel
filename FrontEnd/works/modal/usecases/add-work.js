@@ -12,6 +12,7 @@ const selectCategory = document.getElementById("selectCategory");
 const preview = document.getElementById("preview");
 const modal = document.getElementById("modal");
 const overlay = document.getElementById("overlay");
+const sectionGallery = document.getElementById("section-gallery");
 
 export const addWork = async ({ title, category, image }) => {
   // Création de FormData pour envoyer à l'API
@@ -25,10 +26,8 @@ export const addWork = async ({ title, category, image }) => {
     if (newPhoto) {
       console.log("Photo ajoutée :", newPhoto);
 
-
       // Ajoute la nouvelle photo à la galerie
       ajoutPhotoGallery(newPhoto);
-
 
       // Réinitialise le formulaire
       form.reset();
@@ -45,6 +44,7 @@ export const addWork = async ({ title, category, image }) => {
         submitValidBtn.style.backgroundColor = "#b3b3b3";
         submitValidBtn.disabled = true;
       }
+
       // Cache le bouton "Supprimer l'image"
       if (removePreviewBtn) {
         removePreviewBtn.style.display = "none";
@@ -55,20 +55,23 @@ export const addWork = async ({ title, category, image }) => {
       fileUpload.style.display = "none";
       helpText.style.display = "block";
       selectCategory.style.display = "block";
-      const customFileUpload = document.querySelector(".custom-file-upload").style.display = "flex";
+
+      // Correction du customFileUpload
+      const customFileUpload = document.querySelector(".custom-file-upload");
       if (customFileUpload) {
         customFileUpload.style.display = "flex";
-
       }
 
       // console.log("Fermeture de la modale...");
       // if (modal && overlay) {
       //   modal.style.display = "none";
       //   overlay.style.display = "none";
+      //   sectionGallery.style.display = "block"; // Ajouté pour bien réafficher la galerie
       // } else {
       //   console.error("La modale ou l'overlay est introuvable !");
       // }
     }
   } catch (error) {
+    console.error("Erreur lors de l'ajout du projet :", error);
   }
 };

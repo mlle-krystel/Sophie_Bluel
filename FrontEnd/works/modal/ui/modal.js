@@ -177,7 +177,7 @@ export const initModal = async (listeProjets) => {
     submitAjoutBtn.addEventListener("click", (event) => {
       console.log("Ajout photo bouton cliqué !");
       event.preventDefault();
-      sectionGallery.style.display = "none";
+      sectionGallery.style.display = "block";
       sectionAjoutPhoto.style.display = "block";
       console.log(
         "sectionAjoutPhoto après clic : ",

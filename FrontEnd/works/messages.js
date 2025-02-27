@@ -36,9 +36,9 @@ export const afficherMessage = (message, type) => {
     // Affiche le message
     messageBox.style.display = "block";
 
-    // Cacher après 5 secondes
+    // Cacher après 3 secondes
     setTimeout(() => {
         messageBox.classList.add("hidden");
         messageBox.style.display = "none"; // Assure que le message est bien caché
-    }, 5000);
+    }, 3000);
 };
