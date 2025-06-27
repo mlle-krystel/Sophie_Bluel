@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Sophie Bluel - Architecte d'intérieur</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap"
+    rel="stylesheet">
+  <meta name="description" content="">
+  <link rel="stylesheet" href="./assets/style.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <div id="overlay"></div>
+
+  <p id="editionMode">
+    <i class="fa-regular fa-pen-to-square"></i>Mode édition
+  </p>
+  <header>
+    <h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
+    <nav>
+      <ul>
+        <li>projets</li>
+        <li>contact</li>
+        <li><a id="loginBtn" href="login.html">login</a>
+          <a id="logoutBtn" href="index.html">logout</a>
+        </li>
+        <li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section id="introduction">
+      <figure>
+        <img src="./assets/images/sophie-bluel.png" alt="">
+      </figure>
+      <article>
+        <h2>Designer d'espace</h2>
+        <p>
+          Je raconte votre histoire, je valorise vos idées. Je vous accompagne
+          de la conception à la livraison finale du chantier.
+        </p>
+        <p>
+          Chaque projet sera étudié en commun, de façon à mettre en valeur les
+          volumes, les matières et les couleurs dans le respect de l’esprit
+          des lieux et le choix adapté des matériaux. Le suivi du chantier
+          sera assuré dans le souci du détail, le respect du planning et du
+          budget.
+        </p>
+        <p>
+          En cas de besoin, une équipe pluridisciplinaire peut-être constituée
+          : architecte DPLG, décorateur(trice)
+        </p>
+      </article>
+    </section>
+    <section id="portfolio">
+      <h2>
+        Mes Projets
+
+        <!-- bouton pour ouvrir la modale -->
+        <button id="openModal" aria-hidden="true">
+          <i class="fa-regular fa-pen-to-square"></i> modifier
+        </button>
+      </h2>
+
+      <!-- création d'un conteneur pour les filtres -->
+      <div id="filters"></div>
+
+      <!-- création de l'ID unique gallery pour le sélectionner facilement dans script.js -->
+      <div id="gallery" class="gallery"></div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Vous avez un projet ? Discutons-en !</p>
+      <form action="#" method="post">
+        <label for="name">Nom</label>
+        <input type="text" name="name" id="name" />
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" />
+        <label for="message">Message</label>
+        <textarea name="message" id="message" cols="30" rows="10"></textarea>
+        <input type="submit" value="Envoyer" />
+      </form>
+    </section>
+
+    <!-- <div id="error-msg" class="message error hidden"></div>
+<div id="msg-success" class="message success hidden">L'élément a bien été ajouté</div> -->
+
+
+
+  </main>
+
+  <footer>
+    <nav>
+      <ul>
+        <li>Mentions Légales</li>
+      </ul>
+    </nav>
+  </footer>
+
+  <!-- Fenêtre modale comportant les 2 vues -->
+
+  <div id="modal" class="modal hidden" aria-hidden="true" role="dialog" aria-label="modalTitle">
+    <!-- modale principale -->
+    <div id="section-gallery" class="section-gallery">
+      <!-- Bouton pour fermer la modale -->
+      <button class="closeBtn" aria-hidden="true" aria-label="Fermer la modale">
+        ✕
+      </button>
+
+      <div id="msgBox" class="hidden"></div>
+
+      <!-- Titre de la modale -->
+      <h2 id="modalTittle">Galerie photo</h2>
+
+      <!-- Conteneur de la galerie dans la modale -->
+      <div id="modalGallery" class="modalGallery"></div>
+
+      <div class="firstModalSeparation"></div>
+
+      <!-- BOUTON pour ajouter une nouvelle photo -->
+      <button id="submitAjoutBtn">Ajouter une photo</button>
+    </div>
+
+
+
+    <!-- modale pour ajouter projet -->
+    <div id="section-ajout-photo" class="section-ajout-photo hidden">
+      <!-- Bouton retour -->
+      <button id="backToGalleryBtn" class="backBtn">
+        <i class="fa-solid fa-arrow-left"></i>
+      </button>
+
+      <!-- Bouton pour fermer la modale -->
+      <button class="closeBtn" aria-hidden="true" aria-label="Fermer la modale sectionAjoutPhoto">
+        ✕
+      </button>
+
+      <!-- Message de succès ou d'erreur -->
+      <div id="msgAjout" class="hidden"></div>
+
+      <h2 id="modalTittleAjout">Ajout photo</h2>
+
+      <div id="uploadContainer">
+        <i id="pictureIcon" class="fa-regular fa-image"></i>
+
+
+        <!-- Formulaire pour ajouter une photo -->
+        <form id="addImage">
+          <!-- Conteneur de l'upload d'image -->
+          <label for="fileUpload" class="custom-file-upload">+ Ajouter photo</label>
+          <input type="file" id="fileUpload" class="hidden-input" accept="image" />
+          <img id="preview" style="display: none; max-width: 420px; max-height: 169px; object-fit: contain;">
+          <p class="helptext">jpg, png : 4mo max</p>
+        </form>
+      </div>
+
+      <div id="blockIdPicture">
+        <!-- Champ titre -->
+        <label for="photoTitle">Titre</label>
+        <input type="text" id="photoTitle" required />
+
+        <!-- Champ catégorie ajouté -->
+        <label for="selectCategory">Catégorie</label>
+        <select name="categories" id="selectCategory" required></select>
+      </div>
+
+      <div class="secondModalSeparation"></div>
+
+      <!-- Bouton de validation -->
+      <input type="submit" id="submitValidBtn" value="Valider">
+    </div>
+  </div>
+
+
+  <!-- fichier principal qui importe les autres fichier js -->
+  <script type="module" src="./works/script.js"></script>
+</body>
+
+</html>

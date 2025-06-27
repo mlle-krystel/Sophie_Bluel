@@ -1,0 +1,752 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/** end reset css**/
+body {
+  max-width: 1140px;
+  margin: auto;
+  font-family: "Work Sans";
+  font-size: 14px;
+  background: #fffef8;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  margin: 50px 0;
+}
+
+#editionMode {
+  font-family: work sans;
+  font-size: 16px;
+  font-weight: 400;
+  color: white;
+  background: black;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px;
+  display: none;
+}
+
+section {
+  margin: 50px 0;
+}
+
+h1 {
+  display: flex;
+  flex-direction: column;
+  font-family: "Syne";
+  font-size: 22px;
+  font-weight: 800;
+  color: #b1663c;
+}
+
+h1>span {
+  font-family: "Work Sans";
+  font-size: 10px;
+  letter-spacing: 0.1em;
+}
+
+h2 {
+  font-family: "Syne";
+  font-weight: 700;
+  font-size: 30px;
+  color: #1d6154;
+}
+
+/* boutons filtres */
+#filters {
+  display: flex;
+  justify-content: center;
+  margin: 2em 0;
+}
+
+.btnFiltres {
+  font-family: "Syne";
+  font-weight: 700;
+  font-size: 16px;
+  width: 198px;
+  height: 37px;
+  margin: 5px;
+  color: #1d6154;
+  background-color: transparent;
+  border: 1px solid #1d6154;
+  border-radius: 60px;
+  cursor: pointer;
+}
+
+.btnFiltres.active {
+  background-color: #1d6154;
+  color: white;
+}
+
+/* lien hypertext */
+#bold,
+#loginBtn,
+#logoutBtn {
+  color: black;
+  text-decoration: none;
+}
+
+#bold:visited,
+#loginBtn:visited,
+#logout:visited {
+  font-weight: bold;
+  color: #000000;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+}
+
+nav li {
+  padding: 0 10px;
+  font-size: 1.2em;
+}
+
+li:hover {
+  color: #b1663c;
+}
+
+#introduction {
+  display: flex;
+  align-items: center;
+}
+
+#introduction figure {
+  flex: 1;
+}
+
+#introduction img {
+  display: block;
+  margin: auto;
+  width: 80%;
+}
+
+#introduction article {
+  flex: 1;
+}
+
+#introduction h2 {
+  margin-bottom: 1em;
+}
+
+#introduction p {
+  margin-bottom: 0.5em;
+}
+
+#portfolio h2 {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+#openModal {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: Work Sans;
+  font-weight: 400;
+  font-size: 14px;
+  color: black;
+  padding-right: 75px;
+}
+
+.gallery {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+}
+
+.gallery img {
+  width: 305px;
+  object-fit: cover;
+  height: 407px;
+}
+
+#contact,
+#login {
+  width: 50%;
+  margin: auto;
+}
+
+#contact,
+#login>* {
+  text-align: center;
+}
+
+#contact h2,
+#login h2 {
+  margin-bottom: 20px;
+}
+
+#contact form,
+#login form {
+  text-align: left;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+#contact input,
+#login input {
+  height: 50px;
+  font-size: 1.2em;
+  border: none;
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+}
+
+#contact label,
+#login label {
+  margin: 2em 0 1em 0;
+}
+
+#contact textarea {
+  border: none;
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+}
+
+input[type="submit"],
+button {
+  font-family: "Syne";
+  font-weight: 700;
+  color: white;
+  background-color: #1d6154;
+  margin: 2em auto;
+  width: 180px;
+  text-align: center;
+  border-radius: 60px;
+}
+
+.forgot {
+  text-align: center;
+  text-decoration: underline solid #3d3d3d;
+}
+
+footer nav ul {
+  display: flex;
+  justify-content: flex-end;
+  margin: 2em;
+}
+
+/* affichage modale */
+
+/* Arrière-plan sombre */
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  display: none;
+}
+
+#modal {
+  z-index: 1000;
+  position: fixed;
+  align-items: center;
+  width: 630px;
+  height: 688px;
+  top: 50%;
+  left: 50%;
+  border-radius: 10px;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  overflow: visible;
+}
+
+.hidden-input {
+  display: none;
+  /* Cache complètement l'input */
+}
+
+.hidden {
+  display: none;
+}
+
+#section-gallery {
+  padding: 30px 10px;
+}
+
+#modalTittle {
+  display: flex;
+  justify-content: center;
+  font-family: work Sans;
+  font-weight: 400;
+  font-size: 26px;
+  color: #000000;
+  padding-top: 20px;
+}
+
+#modalGallery {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  padding: 0 65px;
+  margin: 40px 0;
+  column-gap: 20px;
+  row-gap: 15px;
+  max-height: 400px;
+  overflow-y: scroll;
+}
+
+#modalGallery img {
+  width: 100%;
+  object-fit: cover;
+  height: 102px;
+}
+
+.firstModalSeparation {
+  width: 420px;
+  border-bottom: 1px solid #b3b3b3;
+  position: relative;
+  left: 15%;
+}
+
+#submitAjoutBtn {
+  display: flex;
+  width: 240px;
+  height: 40px;
+  border: none;
+  font-family: syne;
+  font-weight: 700;
+  font-size: 14px;
+  justify-content: center;
+  align-items: center;
+}
+
+#modalGallery figure {
+  position: relative;
+}
+
+/* bouton supprimer */
+.fa-trash-can {
+  color: #ffffff;
+  position: absolute;
+  padding: 3px 4px 6px 4px;
+  background: black;
+  right: 8px;
+  top: 8px;
+}
+
+/* modale pour ajouter projet */
+
+#section-ajout-photo {
+  position: fixed;
+  align-items: center;
+  width: 630px;
+  height: 688px;
+  top: 50%;
+  left: 50%;
+  border-radius: 10px;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  z-index: 1000;
+}
+
+#modalTittleAjout {
+  position: relative;
+  text-align: center;
+  font-family: work Sans;
+  font-weight: 400;
+  font-size: 26px;
+  color: #000000;
+  margin: 70px 0 30px;
+}
+
+#uploadContainer {
+  width: 420px;
+  height: 169px;
+  background-color: #e8f1f6;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+  margin: 40px 0 40px 100px;
+}
+
+.helptext {
+  position: relative;
+  bottom: -8px;
+}
+
+#pictureIcon {
+  color: #b9c5cc;
+  font-size: 65px;
+  position: relative;
+  top: -10px;
+}
+
+#backToGalleryBtn {
+  position: absolute;
+  top: -25px;
+  left: -45px;
+  border: none;
+  color: black;
+  font-size: 24px;
+  background: none;
+}
+
+.custom-file-upload {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 173px;
+  height: 36px;
+  background-color: #cbd6dc;
+  color: #306685;
+  cursor: pointer;
+  border-radius: 50px;
+  font-size: 14px;
+  font-family: Work Sans;
+  font-weight: 500;
+}
+
+#blockIdPicture {
+  display: flex;
+  flex-direction: column;
+  margin-left: 100px;
+  gap: 20px;
+  width: 100%;
+}
+
+#photoTitle,
+#selectCategory {
+  width: 420px;
+  border: none;
+  height: 52px;
+  font-size: 16px;
+  background: white;
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+select {
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 10 !important;
+}
+
+select option {
+  position: relative;
+  z-index: 9999;
+}
+
+.secondModalSeparation {
+  width: 420px;
+  border-bottom: 1px solid #b3b3b3;
+  position: relative;
+  /* left: 15%; */
+  margin-left: 100px;
+  margin-top: 40px;
+}
+
+#submitValidBtn {
+  display: flex;
+  width: 240px;
+  font-family: syne;
+  font-weight: 700;
+  font-size: 14px;
+  color: white;
+  background-color: #b3b3b3;
+  border: none;
+  height: 40px;
+}
+
+/* Bouton fermeture des 2 modales */
+.closeBtn {
+  position: absolute;
+  right: -45px;
+  top: -25px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: #000000;
+  font-size: 24px;
+}
+
+.removePreviewBtn {
+  position: absolute;
+  bottom: -85px;
+  border: none;
+  background-color: red;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+#msgBox {
+  display: none;
+  font-size: 18px;
+  text-align: center;
+  width: 50%;
+  margin: auto;
+  position: relative;
+  top: 10px;
+}
+
+#msgAjout {
+  position: relative;
+  display: none;
+  font-size: 18px;
+  text-align: center;
+  width: 50%;
+  margin: auto;
+  top: 40px;
+}
+
+
+#msgLogin {
+  display: none;
+  font-size: 18px;
+  text-align: center;
+  width: 100%;
+  position: relative;
+  top: 20px;
+}
+
+
+
+.error {
+  color: red;
+
+}
+
+.success {
+  color: green;
+}
+
+
+/* RESPONSIVE DESIGN            */
+
+
+/* Écrans moyens : tablette */
+@media (max-width: 1024px) {
+  .gallery {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  #introduction {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  #introduction figure,
+  #introduction article {
+    width: 100%;
+  }
+
+  #filters {
+    flex-wrap: wrap;
+  }
+
+  .btnFiltres {
+    width: auto;
+    padding: 10px 20px;
+    margin: 10px;
+  }
+}
+
+/* Écrans petits : mobile */
+@media (max-width: 600px) {
+  body {
+    padding: 0 15px;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #introduction img {
+    width: 100%;
+  }
+
+  #contact,
+  #login {
+    width: 100%;
+  }
+
+  #modal,
+  #section-ajout-photo {
+    width: 90%;
+    height: auto;
+  }
+
+  #uploadContainer,
+  #photoTitle,
+  #selectCategory,
+  .secondModalSeparation,
+  .firstModalSeparation,
+  #submitAjoutBtn {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .closeBtn,
+  #backToGalleryBtn {
+    right: 10px;
+    top: 10px;
+  }
+
+  #modalGallery {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 10px;
+  }
+
+  .btnFiltres {
+    width: 100%;
+    max-width: 300px;
+  }
+}
