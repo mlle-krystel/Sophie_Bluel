@@ -53,23 +53,24 @@ function afficherProjets(listProjets) {
   gallery.innerHTML = "";
 
   // Parcourt la liste des projets reçue en paramètre
-  listProjets.forEach((projet) => {
-    // Crée un modèle HTML pour représenter chaque projet avec une image et un titre + figcaption qui permet d'ajouter une légende à l'image
-    const modeleHTML = `
-      <figure data-id="${projet.id}">
-        <img src="${projet.imageUrl}" alt="${projet.title}">
-        <figcaption>${projet.title}</figcaption>  
-      </figure>
-    `;
+  
+   
+    listProjets.forEach((projet) => {
+    const figure = document.createElement("figure");
+    figure.dataset.id = projet.id;
+    const img = document.createElement("img");
+    img.src = projet.imageUrl;
+    img.alt = projet.title;
+    const figcaption = document.createElement("figcaption");
+    figcaption.textContent = projet.title;
 
-    // Crée un conteneur temporaire pour insérer le modèle HTML
-    const conteneur = document.createElement("div");
-    conteneur.innerHTML = modeleHTML;
-
-    // Ajoute le contenu HTML dans l'élément "gallery" en prenant le premier enfant du conteneur
-    gallery.appendChild(conteneur.firstElementChild);
+    figure.appendChild(img);
+    figure.appendChild(figcaption);
+    gallery.appendChild(figure);
   });
 }
+
+
 
 // Fonction pour afficher les boutons de filtres
 async function afficherFiltres(categories, listProjets) {
