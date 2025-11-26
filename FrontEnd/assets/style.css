@@ -150,17 +150,26 @@ header {
 }
 
 #editionMode {
-  font-family: work sans;
-  font-size: 16px;
-  font-weight: 400;
-  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw; /* toute la largeur écran */
+  padding: 15px;
   background: black;
-  display: flex;
+  color: white;
+  font-family: Work Sans;
+  font-size: 16px;
+  display: none;        /* caché par défaut */
   justify-content: center;
   gap: 10px;
-  padding: 15px;
-  display: none;
+  z-index: 2000;
 }
+
+/* Quand le mode édition est actif, on décale tout le contenu */
+body.edition-active {
+  padding-top: 30px; /* hauteur du bandeau */
+}
+
 
 section {
   margin: 50px 0;
@@ -658,6 +667,9 @@ select option {
   color: green;
 }
 
+a {
+  text-decoration: none;
+}
 
 /* RESPONSIVE DESIGN            */
 

@@ -18,14 +18,23 @@ function verifLogin() {
   const loginBtn = document.getElementById("loginBtn");
   const filtres = document.getElementById("filters");
 
+  const body = document.body;
+
   if (!token) {
     console.log("L'utilisateur n'est pas connecté en mode édition");
+
+    body.classList.remove("edition-active"); // <-- important
+
     if (editionMode) editionMode.style.display = "none";
     if (openModalBtn) openModalBtn.style.display = "none";
     if (logoutBtn) logoutBtn.style.display = "none";
     if (loginBtn) loginBtn.style.display = "block";
+
   } else {
     console.log("L'utilisateur est connecté en mode édition");
+
+    body.classList.add("edition-active"); 
+
     if (editionMode) editionMode.style.display = "flex";
     if (openModalBtn) openModalBtn.removeAttribute("aria-hidden");
     if (logoutBtn) logoutBtn.style.display = "block";
