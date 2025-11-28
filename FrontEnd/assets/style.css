@@ -159,7 +159,7 @@ header {
   color: white;
   font-family: Work Sans;
   font-size: 16px;
-  display: none;        /* caché par défaut */
+  display: none; /* caché par défaut */
   justify-content: center;
   gap: 10px;
   z-index: 2000;
@@ -169,7 +169,6 @@ header {
 body.edition-active {
   padding-top: 30px; /* hauteur du bandeau */
 }
-
 
 section {
   margin: 50px 0;
@@ -184,7 +183,7 @@ h1 {
   color: #b1663c;
 }
 
-h1>span {
+h1 > span {
   font-family: "Work Sans";
   font-size: 10px;
   letter-spacing: 0.1em;
@@ -317,7 +316,7 @@ li:hover {
 }
 
 #contact,
-#login>* {
+#login > * {
   text-align: center;
 }
 
@@ -646,7 +645,6 @@ select option {
   top: 40px;
 }
 
-
 #msgLogin {
   display: none;
   font-size: 18px;
@@ -656,11 +654,8 @@ select option {
   top: 20px;
 }
 
-
-
 .error {
   color: red;
-
 }
 
 .success {
@@ -673,11 +668,11 @@ a {
 
 /* RESPONSIVE DESIGN            */
 
-
 /* Écrans moyens : tablette */
 @media (max-width: 1024px) {
   .gallery {
     grid-template-columns: 1fr 1fr;
+    justify-items: center;
   }
 
   #introduction {
@@ -685,6 +680,23 @@ a {
     text-align: center;
   }
 
+  header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul {
+    flex-direction: column;
+    margin: 30px 0;
+  }
+
+  li img {
+    margin-top: 20px;
+  }
+
+  h2 {
+    padding-top: 30px;
+  }
   #introduction figure,
   #introduction article {
     width: 100%;
